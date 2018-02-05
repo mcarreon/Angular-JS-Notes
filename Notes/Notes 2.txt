@@ -1,0 +1,41 @@
+Angular JS Expressions
+	recall
+		{{ expression }}
+		can also be written inside a directive
+			ng-bind="expression"
+		expression is resolved and returned where it is written
+	similar to JS expressions
+		contain literals, operators, and variables
+	
+	----
+	Figure 1
+	
+		<div ng-app="">
+			<p>My first expression: {{ 5 + 5 }}</p>
+		</div>
+	
+	In this case, if ng-app is removed, 5 + 5 will be displayed as is
+	----
+	
+	Expressions can be written wherever, and AJS will resolve the expression and return result
+		can change value of CSS properties
+	
+	----
+	Figure 2
+		changes colour of text input box, changing its value
+	
+	<div ng-app="" ng-init="myCol='lightblue'">
+		<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+	</div>
+	----
+	
+AJS Numbers
+	similar to JS numbers
+			ng-init = "var1=20; var2=40"
+	example line with exp and ng-bind
+		<p>Total in dollar: {{ quantity * cost }}</p>
+		<span ng-bind="quantity * cost"></span></p>
+	NOTE: using ng-init is not very common
+	
+https://www.w3schools.com/angular/angular_expressions.asp
+		

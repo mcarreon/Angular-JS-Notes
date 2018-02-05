@@ -1,0 +1,87 @@
+Run with <script> 
+
+AJS library written in JavaScript. 
+	Can be added with the tag: <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	is started automatically when the web page loads
+	
+Extends HTML with ng-directives
+	ng-app defines AngularJS app
+	ng-model binds the value of HTML controls to application data
+	ng-bind binds application data to html view
+
+	
+Figure 1, using each directive
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+ 
+<p>Input something in the input box:</p>
+<p>Name: <input type="text" ng-model="name"></p>
+<p ng-bind="name"></p>
+
+</div>
+
+</body>
+</html>
+
+	ng-app in this case gives the <div> ownership of the app
+	ng-model binds "name" to the <input>
+	ng-bind binds the innerHTML of the <p> to the app var name in ng-model
+	
+Directives
+	HTML attributes with ng prefix
+		ng-init initializes AJS app var
+	use data-ng- if you want to make page HTML valid 
+	
+Expressions
+	written within double braces {{expression}}
+	will output data exactly where the expression is written
+	
+Figure 2	
+
+<div ng-app="">
+ 
+<p>Input something in the input box:</p>
+<p>Name: <input type="text" ng-model="name"></p>
+<p>{{name}}</p>
+
+</div>
+
+	expressions bind AJS data to HTML the same as ng-bind
+
+	
+Applications
+	modules define AJS apps
+	controllers control AJS apps
+	related directives
+		ng-app directive defines application
+		ng-controller defines controller
+
+Figure 3
+
+<p>Try to change the names.</p>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []); #mod defined
+app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+}); #controls the app
+</script>
+
+
+
+	
