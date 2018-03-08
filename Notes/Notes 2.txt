@@ -37,5 +37,22 @@ AJS Numbers
 		<span ng-bind="quantity * cost"></span></p>
 	NOTE: using ng-init is not very common
 	
-https://www.w3schools.com/angular/angular_expressions.asp
-		
+AJS Strings 
+        <div ng-app="" ng-init="firstName='John';lastName='Doe'">
+            <p>{{ firstName + " " + lastName }}</p>
+        </div>
+    exp with ng-bind
+    <div ng-app="" ng-init="first='Austin'; last='Castellino'">
+        <p>Name <span ng-bind="first + ' ' + last"></span></p>
+    </div>
+
+AJS Objects
+    <div ng-app="" ng-init="person={first:'John', last:'Doe'}">
+        {{ person.lastName }}
+    </div>
+
+    exp with ng-bind
+    <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+        <p>The name is <span ng-bind="person.lastName"></span></p>
+    </div>
+
